@@ -41,7 +41,9 @@ def get_data():
 
 # 保存数据
 def save(data):
-    pass
+    date, draw_no, = []
+    for info in data:
+        pass
 
 
 if __name__ == '__main__':
