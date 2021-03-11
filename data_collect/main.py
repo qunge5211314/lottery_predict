@@ -38,3 +38,4 @@ def save(data):
 
 if __name__ == '__main__':
     data = get_data()
+    save(data)
