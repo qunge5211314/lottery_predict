@@ -22,12 +22,20 @@ def get_data():
                                                      "pageSize": 30,
                                                      "isVerify": 1,
                                                      "pageNo": pageNo})
-        print(pageNo, res)
         json_data = json.loads(res.text)
         if not json_data.get("value").get("list"):
             break
         for info in json_data.get("value").get("list"):
-            pass
+            first, second, third, fourth, fifth, sixth, seventh = info.get("lotteryDrawResult").split(" ")
+            data.append({"first": first,
+                         "second": second,
+                         "third": third,
+                         "fourth": fourth,
+                         "fifth": fifth,
+                         "sixth": sixth,
+                         "seventh": seventh,
+                         "date": info.get("lotteryDrawTime"),
+                         "draw_no": info.get("lotteryDrawNum")})
     return data
 
 
@@ -38,4 +46,5 @@ def save(data):
 
 if __name__ == '__main__':
     data = get_data()
+    print(data)
     save(data)
