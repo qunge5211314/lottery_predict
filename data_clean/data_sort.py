@@ -7,17 +7,17 @@
 import pandas as pd
 
 
-def clean_data():
+def sort_data():
     raw_data = pd.read_csv("../raw_data.csv", index_col="date")
     # 按日期从前到后排序
-    cleaned_data = raw_data.sort_values("date")
-    return cleaned_data
+    sorted_data = raw_data.sort_values("date")
+    return sorted_data
 
 
-def save_cleaned_data(cleaned_data):
-    cleaned_data.to_csv("../cleaned_data.csv")
+def save_cleaned_data(sorted_data):
+    sorted_data.to_csv("../sorted_data.csv")
 
 
 if __name__ == '__main__':
-    cleaned_data = clean_data()
-    save_cleaned_data(cleaned_data)
+    sorted_data = sort_data()
+    save_cleaned_data(sorted_data)
