@@ -24,5 +24,5 @@ if __name__ == '__main__':
     blue_ball_one_hot = transfer_one_hot(blue_ball_data, max_value=12)
     red_ball_pd = pd.DataFrame(red_ball_one_hot)
     blue_ball_pd = pd.DataFrame(blue_ball_one_hot)
-    red_ball_pd.to_csv("../red_ball_one_hot.csv")
-    blue_ball_pd.to_csv("../blue_ball_one_hot.csv")
+    red_ball_pd.to_csv("../red_ball_one_hot.csv", header=None, index=False)
+    blue_ball_pd.to_csv("../blue_ball_one_hot.csv", header=None, index=False)
